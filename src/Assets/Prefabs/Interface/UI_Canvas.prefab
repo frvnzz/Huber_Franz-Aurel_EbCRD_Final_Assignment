@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8042132107392632901}
   - component: {fileID: 715806290351730718}
   - component: {fileID: 7236213317073070468}
-  - component: {fileID: 2674957337755920774}
+  - component: {fileID: 4175971488158804505}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 864, y: 755}
+  m_AnchoredPosition: {x: 1626.75, y: 47.24994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &715806290351730718
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2674957337755920774
+--- !u!114 &4175971488158804505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,10 +366,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4214052363782274634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d329cad26b19d4455a0d0445f9779248, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d9c592337b3d407e86169c21bd93846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  scoreText: {fileID: 7236213317073070468}
 --- !u!1 &5393623835024644669
 GameObject:
   m_ObjectHideFlags: 0

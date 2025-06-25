@@ -42,27 +42,11 @@ public class TargetScript : MonoBehaviour
 				audioSource.GetComponent<AudioSource>().clip = downSound;
 				audioSource.Play();
 
+				ScoreManager.Instance.AddScore(1);
+
 				// Start the timer
 				StartCoroutine(DelayTimer());
 				routineStarted = true;
-			}
-		}
-	}
-
-	// Detect collision with projectile
-	private void OnCollisionEnter(Collision collision)
-	{
-		if (!isHit && collision.gameObject.CompareTag("Projectile"))
-		{
-			isHit = true;
-
-			// Add score
-			ScoreManager.Instance.AddScore(1);
-
-			// Optionally, spawn a new target if using a spawner
-			if (spawner != null)
-			{
-				spawner.SpawnTarget();
 			}
 		}
 	}
