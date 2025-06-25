@@ -51,6 +51,17 @@ public class TargetScript : MonoBehaviour
 		}
 	}
 
+	public void RegisterShot()
+	{
+		// If this target was *not* hit, count it as a missed shot.
+		if (!isHit)
+		{
+			var playerHealth = Object.FindFirstObjectByType<PlayerHealth>();
+			if (playerHealth != null)
+				playerHealth.MissedShot();
+		}
+	}
+
 	// Time before the target pops back up
 	private IEnumerator DelayTimer()
 	{
