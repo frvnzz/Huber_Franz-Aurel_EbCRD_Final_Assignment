@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 public class GameManager : MonoBehaviour
 {
     public TargetSpawner targetSpawner;
-    public ScoreManager scoreManager;
+    // public ScoreManager scoreManager;
     [Header("Game Settings")]
     public int startingScore = 0;
     void Start()
@@ -11,8 +14,8 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        if (scoreManager != null)
-            scoreManager.score = startingScore;
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.score = startingScore;
         if (targetSpawner != null)
             targetSpawner.SpawnTarget();
     }
@@ -22,6 +25,14 @@ public class GameManager : MonoBehaviour
     }
     public void EndGame()
     {
-        Debug.Log("Game Over! Final Score: " + scoreManager.score);
+        Debug.Log("Final Score: " + ScoreManager.Instance.score);
+        ScoreManager.lastScore = ScoreManager.Instance.score;
+        StartCoroutine(DelayedGameOverLoad());
+    }
+
+    private IEnumerator DelayedGameOverLoad()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        SceneManager.LoadSceneAsync("GameOver");
     }
 }

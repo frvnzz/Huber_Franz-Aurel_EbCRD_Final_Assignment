@@ -3405,7 +3405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSpawner: {fileID: 2008577504}
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 1790573286}
   startingScore: 0
 --- !u!4 &352146401
 Transform:

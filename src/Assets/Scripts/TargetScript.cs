@@ -39,7 +39,7 @@ public class TargetScript : MonoBehaviour
 				gameObject.GetComponent<Animation>().Play();
 
 				// Set the downSound as current sound, and play it
-				audioSource.GetComponent<AudioSource>().clip = downSound;
+				audioSource.clip = downSound;
 				audioSource.Play();
 
 				ScoreManager.Instance.AddScore(1);
@@ -72,7 +72,7 @@ public class TargetScript : MonoBehaviour
 		gameObject.GetComponent<Animation>().Play();
 
 		// Set the upSound as current sound, and play it
-		audioSource.GetComponent<AudioSource>().clip = upSound;
+		audioSource.clip = upSound;
 		audioSource.Play();
 
 		// Target is no longer hit
