@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // public ScoreManager scoreManager;
     [Header("Game Settings")]
     public int startingScore = 0;
+    public float gameDuration = 60f; // in seconds
     void Start()
     {
         StartGame();
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
             ScoreManager.Instance.score = startingScore;
         if (targetSpawner != null)
             targetSpawner.SpawnTarget();
+        if (Timer.Instance != null)
+            Timer.Instance.StartTimer(gameDuration);
     }
     public void ResetGame()
     {
