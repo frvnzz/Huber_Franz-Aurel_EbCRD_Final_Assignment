@@ -3406,7 +3406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSpawner: {fileID: 2008577504}
   startingScore: 0
-  gameDuration: 10
+  gameDuration: 120
 --- !u!4 &352146401
 Transform:
   m_ObjectHideFlags: 0

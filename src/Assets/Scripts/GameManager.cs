@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Final Score: " + ScoreManager.Instance.score);
         ScoreManager.lastScore = ScoreManager.Instance.score;
+        LeaderboardManager.AddEntry(ScoreManager.lastScore);
         StartCoroutine(DelayedGameOverLoad());
     }
 

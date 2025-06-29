@@ -8,7 +8,7 @@ This project uses third party assets like 3D models from the [Unity AssetStore](
 
 The project idea that I had for this final assignment was an aim trainer game / indoor shooting range simulator. I initially sketched out a small document that lists MVP, Idea, Scenes and a project structure idea:
 
-![project_notes.pdf](/img/project_notes.png)
+![Project Notes](/img/project_notes.png)
 ---
 
 ### How to Run the Program (User Guideline)
@@ -18,7 +18,7 @@ The project idea that I had for this final assignment was an aim trainer game / 
 2. **Clone the Repository**  
    Clone the project repository to your local machine with:
    ```bash
-   https://github.com/frvnzz/Huber_Franz-Aurel_EbCRD_Final_Assignment.git
+   git clone https://github.com/frvnzz/Huber_Franz-Aurel_EbCRD_Final_Assignment.git
    ```
 
    Alternatively, you can download the repository as a .zip file from 
@@ -49,7 +49,10 @@ The project idea that I had for this final assignment was an aim trainer game / 
 - The **Timer.cs** script manages the countdown timer for each round.
 - When the game starts, the timer is initialized with `gameDuration` of **GameManager.cs** and started using the `StartTimer()` method.
 - The timer counts down in real time, and when it reaches zero, the game ends automatically by calling the `EndGame()` method of **GameManager.cs**.
-- The **TimerDisplay.cs** script updates the UI to show the remaining time to the
+- The **TimerDisplay.cs** script updates the UI to show the remaining time in the game.
+
+#### Leaderboard
+- The **LeaderboardManager.cs** script manages saving and loading the top scores to a persistent JSON file (`leaderboard.json`) by using the `Application.persistentDataPath`. When the game ends through `GameManager.EndGame()`, the final score is added to the .json by calling `LeaderboardManager.AddEntry()`. The leaderboard keeps only the top 5 scores and adds a timestamp for when they were achieved.
 
 #### Display Scripts
 
@@ -58,3 +61,24 @@ These display scripts always reflect the current game state, while keeping UI se
 - The **ScoreDisplay.cs** script shows the score UI by reading the current score from `ScoreManager`.
 - The **PlayerHealthDisplay.cs** script shows the player's health UI by reading the current health from `PlayerHealth`.
 - The **TimerDisplay.cs** script shows the remaining time in the UI by reading the countdown value from `Timer` and formatting it as minutes and seconds for the player.
+- The **LeaderboardDisplay.cs** script displays the leaderboard on the Game Over screen. It reads the data from the json with `LeaderboardManager.Load()` and formats the scores to display them in a `TextMeshProUGUI` field.
+
+---
+
+### Resources
+
+Here are all the resources I had to use in addition to EbCRD and CD course contents to achieve the features I wanted for the game. These are mainly focused on persistent data management for the leaderboard/highscore.
+
+#### Videos
+
+- [Data Persistence Three Ways (Saving and Loading in Unity)](https://www.youtube.com/watch?v=YfOsdfrMvVk)
+- [How to SAVE and LOAD Game Data in Unity 6 (Tutorial 2025)](https://www.youtube.com/watch?v=llmaxNvwy4E)
+- [Make a FIRST PERSON SHOOTER in 10 MINUTES - Unity Tutorial](https://www.youtube.com/watch?v=OFXvvuxqPNQ&t=357s)
+- [5 Minute MAIN MENU Unity Tutorial](https://www.youtube.com/watch?v=-GWjA6dixV4&t=63s)
+
+#### Websites and Documentation
+
+- [Application.persistentDataPath, Scripting API](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/Application-persistentDataPath.html)
+- [JsonUtility, Scripting API](https://docs.unity3d.com/ScriptReference/JsonUtility.html)
+- [Script serialization, Scripting API](https://docs.unity3d.com/6000.1/Documentation/Manual/script-serialization.html)
+- [Splitting tasks across frames, Scripting API](https://docs.unity3d.com/6000.1/Documentation/Manual/coroutines.html)
