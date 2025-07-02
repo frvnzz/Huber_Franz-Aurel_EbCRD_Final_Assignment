@@ -52,7 +52,7 @@ The project idea that I had for this final assignment was an aim trainer game / 
 - The **TimerDisplay.cs** script updates the UI to show the remaining time in the game.
 
 #### Leaderboard
-- The **LeaderboardManager.cs** script manages saving and loading the top scores to a persistent JSON file (`leaderboard.json`) by using the `Application.persistentDataPath`. When the game ends through `GameManager.EndGame()`, the final score is added to the .json by calling `LeaderboardManager.AddEntry()`. The leaderboard keeps only the top 5 scores and adds a timestamp for when they were achieved.
+- The **LeaderboardManager.cs** script manages saving and loading the top scores to a persistent .json file (`leaderboard.json`) by using the `Application.persistentDataPath`. When the game ends through `GameManager.EndGame()`, the final score is added to the .json by calling `LeaderboardManager.AddEntry()`. The leaderboard keeps only the top 5 scores and adds a timestamp for when they were achieved.
 
 #### Display Scripts
 
@@ -61,7 +61,7 @@ These display scripts always reflect the current game state, while keeping UI se
 - The **ScoreDisplay.cs** script shows the score UI by reading the current score from `ScoreManager`.
 - The **PlayerHealthDisplay.cs** script shows the player's health UI by reading the current health from `PlayerHealth`.
 - The **TimerDisplay.cs** script shows the remaining time in the UI by reading the countdown value from `Timer` and formatting it as minutes and seconds for the player.
-- The **LeaderboardDisplay.cs** script displays the leaderboard on the Game Over screen. It reads the data from the json with `LeaderboardManager.Load()` and formats the scores to display them in a `TextMeshProUGUI` field.
+- The **LeaderboardDisplay.cs** script displays the leaderboard on the Game Over screen. It reads the data from the .json with `LeaderboardManager.Load()` and formats the scores to display them in a `TextMeshProUGUI` field.
 
 ---
 
