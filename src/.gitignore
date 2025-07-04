@@ -142,3 +142,6 @@ GeneratedSoundBanks/*
 WwiseProject/GeneratedSoundBanks/
 WwiseProject/.cache/
 WwiseProject/.sourcecontrol/
+
+# Ignore export-project-to-zip package
+Packages/ca.tim-cstj.export-project-to-zip

@@ -8,7 +8,7 @@ This project uses third party assets like 3D models from the [Unity AssetStore](
 
 The project idea that I had for this final assignment was an aim trainer game / indoor shooting range simulator. I initially sketched out a small document that lists MVP, Idea, Scenes and a project structure idea:
 
-![Project Notes](/img/project_notes.png)
+![Project Idea Notes](/img/project_notes.png)
 ---
 
 ### How to Run the Program (User Guideline)
